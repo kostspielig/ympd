@@ -3,15 +3,16 @@
   :url "TODO"
 
   :dependencies [[cljs-http "0.1.39"]
-                 [cljsjs/react-with-addons "0.14.3-0"]
+                 [cljsjs/react-with-addons "15.2.1-0"]
                  [com.cemerick/piggieback "0.2.1"]
                  [kibu/pushy "0.3.6"]
                  [org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.7.228"]
                  [org.clojure/core.async "0.2.374"]
                  [org.clojure/core.match "0.3.0-alpha4"]
-                 [reagent "0.6.0-alpha" :exclusions [cljsjs/react]]
-                 [secretary "1.2.3"]]
+                 [reagent "0.6.0" :exclusions [cljsjs/react]]
+                 [secretary "1.2.3"]
+                 [cljs-react-material-ui "0.2.21"]]
 
   :min-lein-version "2.5.3"
 

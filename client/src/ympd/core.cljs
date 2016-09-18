@@ -25,7 +25,10 @@
             [cljs.core.match]
             [clojure.string :as str]
             [secretary.core :as secretary :refer-macros [defroute]]
-            [pushy.core :as pushy])
+            [pushy.core :as pushy]
+            [cljs-react-material-ui.core :as ui]
+            [cljs-react-material-ui.reagent :as rui]
+            [cljs-react-material-ui.icons :as ic])
   (:import goog.History))
 
 
@@ -48,6 +51,9 @@
     [_ (go (let [data (:body (<! (http/get "data/data.json")))]
              (swap! state assoc-in [:data] data)))]
     [:div#main
+     [rui/app-bar {:title "YMPD"
+                   :icon-element-right
+                   (r/as-element [rui/flat-button {:label "Save"}])}]
      [:h1 "welcome to ympd"]
      (str (:data @state))]))
 
@@ -56,10 +62,12 @@
    [:h1 "Page not found!"]])
 
 (defn root-view [state]
-  (match [(:view @state)]
-         [[:init]]  [:div]
-         [[:main]]  [main-view state]
-         :else      [not-found-view]))
+  [rui/mui-theme-provider
+   {:mui-theme (ui/get-mui-theme)}
+   (match [(:view @state)]
+     [[:init]]  [:div]
+     [[:main]]  [main-view state]
+     :else      [not-found-view])])
 
 (defn init-components! [app-state]
   (r/render-component
