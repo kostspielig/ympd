@@ -1,0 +1,14 @@
+.lein-repl-history
+.nrepl-port
+.sass-cache/
+\#*
+build/
+css/
+data/*.json
+figwheel_server.log
+host.ncftpput
+node_modules/
+resources/css/
+resources/data/*.json
+resources/js/
+target/

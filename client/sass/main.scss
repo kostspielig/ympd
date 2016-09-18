@@ -1,0 +1,20 @@
+body {
+    color: maroon;
+    background-color: pink;
+}
+
+a, a:hover,
+a:active,
+a:focus {
+    outline: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.clear {
+    width: 100%;
+    clear: both !important;
+    display: block;
+}
